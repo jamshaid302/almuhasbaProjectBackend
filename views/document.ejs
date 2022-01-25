@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Api Documentation</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="/assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="/assets/plugins/elegant_font/css/style.css">
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body class="body-green">
+<div class="page-wrapper">
+    <!-- ******Header****** -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="branding">
+                <h1 class="logo">
+                    <a href="/">
+                        <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                        <span class="text-highlight"></span><span class="text-bold">Docs</span>
+                    </a>
+                </h1>
+
+            </div><!--//branding-->
+
+
+            <div class="top-search-box">
+
+            </div>
+
+        </div><!--//container-->
+    </header><!--//header-->
+    <div class="doc-wrapper">
+        <div class="container">
+            <div id="doc-header" class="doc-header text-center">
+                <h1 class="doc-title"><i class="icon fa fa-paper-plane"></i> Quick Start</h1>
+
+            </div><!--//doc-header-->
+            <div class="doc-body row">
+                <div class="doc-content col-md-9 col-12 order-1">
+                    <div class="content-inner">
+                        <section id="auth" class="doc-section">
+                            <h2 class="section-title">Authentication</h2>
+                            <h5>Verify token</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/login/verifytoken</span> </code></pre>
+                            <h5>Login</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : <%= domain %>/login/</span> </code></pre>
+                            <h5>Registeration</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : <%= domain %>/register/</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+                                <li>name</li>
+                                <li>email</li>
+                                <li>password</li>
+                                <li>photo</li>
+                                <li>phone</li>
+                                <li>designation</li>
+                                <li>address</li>
+                                <li>role:'guest','admin',"supervisor"</li>
+                            </ul>
+
+                        </section><!--//doc-section-->
+
+                        <section id="profile" class="doc-section">
+                            <h2 class="section-title">Profile</h2>
+                            <h5>Get profile by id</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/login/{id}</span> </code></pre>
+                            <h5>Update profile info</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : <%= domain %>/register/update</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+                                <li>name</li>
+                                <li>phone</li>
+                                <li>destination</li>
+                                <li>address</li>
+                            </ul>
+                            <h5>Change password</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : <%= domain %>/register/changepassword</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+                                <li>password1</li>
+                                <li>password2(both for verification)</li>
+                                <li>email</li>
+                                <li>old (old password)</li>
+                            </ul>
+                            <h5>Change picture</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : <%= domain %>/register/avatar</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+                                <li>avatar (file field name)</li>
+                                <li>id</li>
+                            </ul>
+                        </section><!--//doc-section-->
+
+                        <section id="category" class="doc-section">
+                            <h2 class="section-title">Category</h2>
+                            <h5>Get all categories and subcategory with unwind</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/category/catsubunwind</span> </code></pre>
+                            <h5>Get all subcategories within category</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/category/catsub</span> </code></pre>
+
+                            <h5>Get only categories</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/category/cat</span> </code></pre>
+                            <h5>Get all subcategories of specific category</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/category/{category-id}</span> </code></pre>
+                            <h5>Add category or subcategory</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : <%= domain %>/api/category/</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+                                <li>name</li>
+                                <li>categoryId(optional in case of adding new  category)</li>
+                            </ul>
+                            <h5>Update category</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : <%= domain %>/api/category/update</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>name</li>
+                                <li>categoryId(optional in case of adding new  category)</li>
+                            </ul>
+                            <h5>Delete subcategory</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/category/delete/{id}</span> </code></pre>
+
+
+                        </section><!--//doc-section-->
+
+
+                        <section id="supplier" class="doc-section">
+                            <h2 class="section-title">Supplier</h2>
+                            <h5>Get all supplier</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/supplier/</span> </code></pre>
+                            <h5>Get supplier by id</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/supplier/{id}</span> </code></pre>
+
+                            <h5>Add Supplier</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : <%= domain %>/api/supplier/</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>firstName</li>
+                                <li>lastName</li>
+                                <li>phone</li>
+                                <li>address</li>
+                                <li>cnic</li>
+                                <li>area</li>
+                                <li>province</li>
+
+                            </ul>
+                            <h5>Update supplier</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : <%= domain %>/api/supplier/update</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>firstName</li>
+                                <li>lastName</li>
+                                <li>phone</li>
+                                <li>address</li>
+                                <li>cnic</li>
+                                <li>area</li>
+                                <li>province</li>
+
+                            </ul>
+                            <h5>Delete supplier</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/supplier/delete/{id}</span> </code></pre>
+                        </section><!--//doc-section-->
+
+                        <section id="warehouse" class="doc-section">
+                            <h2 class="section-title">Warehouse</h2>
+                            <h5>Get all warehouses</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/warehouse/</span> </code></pre>
+                            <h5>Get all warehouses with stores unwind</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/warehouse/storewarehouse</span> </code></pre>
+                            <h5>Get warehouses by id</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/warehouse/{id}</span> </code></pre>
+                            <h5>Add warehouse</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : <%= domain %>/api/warehouse/</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>name</li>
+                                <li>address</li>
+
+                            </ul>
+                            <h5>Update warehouse</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : <%= domain %>/api/warehouse/update</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+                                <li>name</li>
+                                <li>address</li>
+                            </ul>
+                            <h5>Delete warehouse</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/warehouse/delete/{id}</span> </code></pre>
+                        </section><!--//doc-section-->
+                        <section id="store" class="doc-section">
+                            <h2 class="section-title">Store</h2>
+                            <h5>Get all stores</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/store/</span> </code></pre>
+                            <h5>Get store by id</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/store/{id}</span> </code></pre>
+                            <h5>Get all stores with chatha unwind</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/store/storedetail</span> </code></pre>
+
+                            <h5>Get stores with chatha</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/store/storechatha</span> </code></pre>
+
+                            <h5>Add store</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : <%= domain %>/api/store/</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>name</li>
+                                <li>direction</li>
+                                <li>isOccupy</li>
+                                <li>storeId</li>
+
+
+                            </ul>
+                            <h5>Update store</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : <%= domain %>/api/store/update</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>name</li>
+                                <li>direction</li>
+                                <li>isOccupy</li>
+                                <li>storeId</li>
+                            </ul>
+                            <h5>Delete store</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/store/delete/{id}</span> </code></pre>
+
+                        </section>
+                        <section id="farmaddress" class="doc-section">
+                            <h2 class="section-title">Farm Address</h2>
+                            <h5>Get all farm address with their rates in group</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/farmaddress/farmgroup</span> </code></pre>
+                            <h5>Get all farm address with their rates</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/farmaddress/</span> </code></pre>
+
+                            <h5>Get farm address by id</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/farmaddress/{id}</span> </code></pre>
+                            <h5>Add farm address</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : <%= domain %>/api/farmaddress/</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+                                <li>tehsil</li>
+                                <li>district</li>
+                                <li>address</li>
+                            </ul>
+                            <h5>Update farm address</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : <%= domain %>/api/farmaddress/update</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>tehsil</li>
+                                <li>district</li>
+                                <li>address</li>
+                            </ul>
+                            <h5>Delete farm address</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/farmaddress/delete/{id}</span> </code></pre>
+
+                        </section>
+                        <section id="carriagerate" class="doc-section">
+                            <h2 class="section-title">Carriage Rate</h2>
+                             <h5>Add carriage rate</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST :<%= domain %>/api/carriagerate/</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>farmAddress (foreign key)</li>
+                                <li>rate</li>
+
+                            </ul>
+                        </section>
+                        <section id="contractor" class="doc-section">
+                            <h2 class="section-title">Contractor</h2>
+                            <h5>Get all contractor</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/contractor/</span> </code></pre>
+                            <h5>Get contractor by id</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/contractor/{id}</span> </code></pre>
+                            <h5>Get contractor detail by id</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/contractor/detail/{id}</span> </code></pre>
+
+                            <h5>Add contractor</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : <%= domain %>/api/contractor/</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>firstName</li>
+                                <li>lastName</li>
+                                <li>rate</li>
+                                <li>address</li>
+                                <li>cnic</li>
+                                <li>phone</li>
+                                <li>type</li>
+                                <li>purchaseOrder(Foreign key optional)</li>
+
+
+                            </ul>
+                            <h5>Update contractor</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : <%= domain %>/api/contractor/update</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>firstName</li>
+                                <li>lastName</li>
+                                <li>rate</li>
+                                <li>address</li>
+                                <li>cnic</li>
+                                <li>phone</li>
+                                <li>type</li>
+                                <li>purchaseOrder(Foreign key optional)</li>
+
+
+                            </ul>
+                            <h5>Delete contractor</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/contractor/delete/{id}</span> </code></pre>
+
+                        </section>
+                        <section id="contractorRate" class="doc-section">
+                            <h2 class="section-title">Contractor Rate</h2>
+                             <h5>Add contractor</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : <%= domain %>/api/contractorrate/</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>contractorId</li>
+                                <li>packingSize</li>
+                                <li>rate</li>
+
+
+                            </ul>
+                            <h5>Delete contractor Rate</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/contractorrate/delete/{id}</span> </code></pre>
+
+                        </section>
+
+
+
+
+                        <section id="purchaseorder" class="doc-section">
+                            <h2 class="section-title">Pruchase Order</h2>
+                            <h5>Get all purchase orders</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/purchaseorder/</span> </code></pre>
+                            <h5>Get purchase orders by id</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/purchaseorder/{id}</span> </code></pre>
+                            <h5>Add purchase order</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : <%= domain %>/api/purchaseorder/</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>categoryId</li>
+                                <li>supplierId</li>
+                                <li>carriageRateId</li>
+                                <li>storeId</li>
+                                <li>contractor</li>
+                                <li>invoiceId</li>
+                                <li>vehicleNumber</li>
+                                <li>gatePass</li>
+                                <li>driverName</li>
+                                <li>purchaseDate</li>
+                                <p><b>Weights for commodity</b></p>
+                                <li>farmGross</li>
+                                <li>farmTare</li>
+                                <li>factoryGross</li>
+                                <li>factoryTare</li>
+                                <p><b>Deductions for commodity</b></p>
+                                <li>bardana</li>
+                                <li>kanta</li>
+                                <li>sangli</li>
+                                <li>moisture</li>
+                                <li>other</li>
+                                <p><b>Fixation data</b></p>
+                                <li>rate</li>
+                                <li>pageRef</li>
+                                <li>image</li>
+                                <li>fixationDate</li>
+                                <p><b>Invoices</b></p>
+                                <li>status</li>
+                                <li>totalAmount</li>
+                                <li>paidAmount</li>
+
+                            </ul>
+                            <h5>Update purchase orders</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : <%= domain %>/api/purchaseorder/update</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>categoryId</li>
+                                <li>supplierId</li>
+                                <li>carriageRateId</li>
+                                <li>storeId</li>
+                                <li>contractor</li>
+                                <li>invoiceId</li>
+                                <li>vehicleNumber</li>
+                                <li>gatePass</li>
+                                <li>driverName</li>
+                                <li>purchaseDate</li>
+                                <p>Weights for commodity</p>
+                                <li>farmGross</li>
+                                <li>farmTare</li>
+                                <li>factoryGross</li>
+                                <li>factoryTare</li>
+                                <p>Deductions for commodity</p>
+                                <li>bardana</li>
+                                <li>kanta</li>
+                                <li>sangli</li>
+                                <li>moisture</li>
+                                <li>other</li>
+                                <p>Fixation data</p>
+                                <li>rate</li>
+                                <li>pageRef</li>
+                                <li>image</li>
+                                <li>fixationDate</li>
+                                <p>Invoices</p>
+                                <li>status</li>
+                                <li>totalAmount</li>
+                                <li>paidAmount</li>
+
+                            </ul>
+                            <h5>Delete purchase orders</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/purchaseorder/delete/{id}</span> </code></pre>
+
+
+
+                        </section>
+                        <section id="invoice" class="doc-section">
+                            <h2 class="section-title">Invoice</h2>
+                            <h5>Get all invoices</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/invoice/</span> </code></pre>
+                            <h5>Get invoices by id</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/invoice/{id}</span> </code></pre>
+                            <h5>Add invoice</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : <%= domain %>/api/invoice/</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>purchaseOrderId</li>
+                                <li>amount</li>
+
+                            </ul>
+                            <h5>Update invoice</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : <%= domain %>/api/invoice/update</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>purchaseOrderId</li>
+                                <li>amount</li>
+
+
+                            </ul>
+                            <h5>Delete invoice</h5>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : <%= domain %>/api/invoice/delete/{id}</span> </code></pre>
+
+
+                        </section>
+                        <section id="runningapp" class="doc-section">
+                            <h2 class="section-title">A2DCustomer</h2>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : https://metropolis.azurewebsites.net/api/runningapp/</span> </code></pre>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : https://metropolis.azurewebsites.net/api/runningapp/</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>ID</li>
+                                <li>A2DCustomer</li>
+                                <li>Type</li>
+                                <li>Importance</li>
+                                <li>ProductName</li>
+                                <li>Discarded</li>
+                                <li>Exefile</li>
+                                <li>Originalfilename</li>
+                                <li>Icon</li>
+                                <li>Fileversion</li>
+                                <li>Productversion</li>
+                                <li>URL</li>
+                                <li>Language</li>
+                                <li>ImageVersion</li>
+                                <li>Cloudsensitive</li>
+                                <li>Newerversion</li>
+                                <li>VirtualApp</li>
+                                <li>type</li>
+                                <li>Notes</li>
+
+                            </ul>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : https://metropolis.azurewebsites.net/api/runningapp/update</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>ID</li>
+                                <li>A2DCustomer</li>
+                                <li>Type</li>
+                                <li>Importance</li>
+                                <li>ProductName</li>
+                                <li>Discarded</li>
+                                <li>Exefile</li>
+                                <li>Originalfilename</li>
+                                <li>Icon</li>
+                                <li>Fileversion</li>
+                                <li>Productversion</li>
+                                <li>URL</li>
+                                <li>Language</li>
+                                <li>ImageVersion</li>
+                                <li>Cloudsensitive</li>
+                                <li>Newerversion</li>
+                                <li>VirtualApp</li>
+                                <li>type</li>
+                                <li>Notes</li>
+
+                            </ul>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : https://metropolis.azurewebsites.net/api/runningapp/delete/{id}</span> </code></pre>
+
+
+                        </section>
+                        <section id="VirtualApp" class="doc-section">
+                            <h2 class="section-title">VirtualApp</h2>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : https://metropolis.azurewebsites.net/api/virtualapp/</span> </code></pre>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : https://metropolis.azurewebsites.net/api/virtualapp/</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>A2DCustomer</li>
+                                <li>RunningApp</li>
+                                <li>Importance</li>
+                                <li>Name</li>
+                                <li>Visible</li>
+                                <li>RequiresApproval</li>
+                                <li>URLExecutionPathToWorkspace</li>
+                                <li>SwitchForEver</li>
+                                <li>Icon</li>
+                                <li>Productversion</li>
+                                <li>Type</li>
+                                <li>Group</li>
+                                <li>Source</li>
+                                <li>Clouds</li>
+                                <li>Minsessions</li>
+                                <li>Provisionedsessions</li>
+
+
+                            </ul>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : https://metropolis.azurewebsites.net/api/virtualapp/update</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>A2DCustomer</li>
+                                <li>RunningApp</li>
+                                <li>Importance</li>
+                                <li>Name</li>
+                                <li>Visible</li>
+                                <li>RequiresApproval</li>
+                                <li>URLExecutionPathToWorkspace</li>
+                                <li>SwitchForEver</li>
+                                <li>Icon</li>
+                                <li>Productversion</li>
+                                <li>Type</li>
+                                <li>Group</li>
+                                <li>Source</li>
+                                <li>Clouds</li>
+                                <li>Minsessions</li>
+                                <li>Provisionedsessions</li>
+
+                            </ul>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : https://metropolis.azurewebsites.net/api/virtualapp/delete/{id}</span> </code></pre>
+
+
+                        </section>
+                        <section id="VirtualAppCloudEnvironment" class="doc-section">
+                            <h2 class="section-title">VirtualAppCloudEnvironment</h2>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : https://metropolis.azurewebsites.net/api/virtualappcloudenvironment/</span> </code></pre>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : https://metropolis.azurewebsites.net/api/virtualappcloudenvironment/</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>ID</li>
+                                <li>A2DCustomer</li>
+                                <li>VirtualApp</li>
+                                <li>CloudEnvironment</li>
+                                <li>VMLimit</li>
+                                <li>AssignationHeight</li>
+                                <li>CTXCatalog</li>
+                                <li>SessionsPerVM</li>
+                                <li>BaseSessions</li>
+                                <li>VMType</li>
+
+                            </ul>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : https://metropolis.azurewebsites.net/api/virtualappcloudenvironment/update</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>ID</li>
+                                <li>A2DCustomer</li>
+                                <li>VirtualApp</li>
+                                <li>CloudEnvironment</li>
+                                <li>VMLimit</li>
+                                <li>AssignationHeight</li>
+                                <li>CTXCatalog</li>
+                                <li>SessionsPerVM</li>
+                                <li>BaseSessions</li>
+                                <li>VMType</li>
+
+                            </ul>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : https://metropolis.azurewebsites.net/api/virtualappcloudenvironment/delete/{id}</span> </code></pre>
+
+
+                        </section>
+                        <section id="VirtualAppVotes" class="doc-section">
+                            <h2 class="section-title">VirtualAppVotes</h2>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : https://metropolis.azurewebsites.net/api/virtualappvotes/</span> </code></pre>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : https://metropolis.azurewebsites.net/api/virtualappvotes/</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>A2DCustomer</li>
+                                <li>VirtualApp</li>
+                                <li>ADUser</li>
+                                <li>Date</li>
+
+
+                            </ul>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : https://metropolis.azurewebsites.net/api/virtualappvotes/update</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>A2DCustomer</li>
+                                <li>VirtualApp</li>
+                                <li>ADUser</li>
+                                <li>Date</li>
+                            </ul>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : https://metropolis.azurewebsites.net/api/virtualappvotes/delete/{id}</span> </code></pre>
+
+                        </section>
+                        <section id="Cloud" class="doc-section">
+                            <h2 class="section-title">Cloud</h2>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : https://metropolis.azurewebsites.net/api/cloud/</span> </code></pre>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : https://metropolis.azurewebsites.net/api/cloud/</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>ID</li>
+                                <li>A2DCustomer</li>
+                                <li>Provider</li>
+                                <li>Enabled</li>
+                                <li>CTXHostinUnit</li>
+                                <li>VMLimit</li>
+                                <li>Name</li>
+                                <li>Production</li>
+                                <li>Notes</li>
+
+                            </ul>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> POST : https://metropolis.azurewebsites.net/api/cloud/update</span> </code></pre>
+                            <h4>Parameters</h4>
+                            <ul>
+
+                                <li>ID</li>
+                                <li>A2DCustomer</li>
+                                <li>Provider</li>
+                                <li>Enabled</li>
+                                <li>CTXHostinUnit</li>
+                                <li>VMLimit</li>
+                                <li>Name</li>
+                                <li>Production</li>
+                                <li>Notes</li>
+
+                            </ul>
+                            <pre class=" language-javascript"><code class=" language-javascript"> <span> GET : https://metropolis.azurewebsites.net/api/cloud/delete/{id}</span> </code></pre>
+
+
+                        </section>
+
+                    </div><!--//content-inner-->
+                </div><!--//doc-content-->
+                <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                    <div id="doc-nav" class="doc-nav">
+
+                        <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                            <a class="nav-link scrollto" href="#auth">Auth</a>
+                            <a class="nav-link scrollto" href="#profile">Profile</a>
+                            <a class="nav-link scrollto" href="#category">Category</a>
+                            <a class="nav-link scrollto" href="#supplier">supplier</a>
+                            <a class="nav-link scrollto" href="#warehouse">warehouse</a>
+                            <a class="nav-link scrollto" href="#store">store</a>
+                            <a class="nav-link scrollto" href="#farmaddress">Farm Address</a>
+                            <a class="nav-link scrollto" href="#carriagerate">Carriage Rate</a>
+                            <a class="nav-link scrollto" href="#contractor">Contractor</a>
+                            <a class="nav-link scrollto" href="#contractorRate">Contractor Rate</a>
+                            <a class="nav-link scrollto" href="#purchaseorder">Purchase Order</a>
+                            <a class="nav-link scrollto" href="#invoice">Invoice</a>
+                            <a class="nav-link scrollto" href="#runningapp">RunningApp</a>
+                            <a class="nav-link scrollto" href="#VirtualApp">VirtualApp</a>
+                            <a class="nav-link scrollto" href="#VirtualAppCloudEnvironment">VirtualAppCloudEnvironment</a>
+                            <a class="nav-link scrollto" href="#VirtualAppVotes">VirtualAppVotes</a>
+                            <a class="nav-link scrollto" href="#Cloud">Cloud</a>
+
+
+                        </nav><!--//doc-menu-->
+
+                    </div>
+                </div><!--//doc-sidebar-->
+            </div><!--//doc-body-->
+        </div><!--//container-->
+    </div><!--//doc-wrapper-->
+
+</div><!--//page-wrapper-->
+
+<footer id="footer" class="footer text-center">
+    <div class="container">
+        <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+
+    </div><!--//container-->
+</footer><!--//footer-->
+
+
+<!-- Main Javascript -->
+<script type="text/javascript" src="/assets/plugins/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/plugins/prism/prism.js"></script>
+<script type="text/javascript" src="/assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+<script type="text/javascript" src="/assets/plugins/stickyfill/dist/stickyfill.min.js"></script>
+<script type="text/javascript" src="/assets/js/main.js"></script>
+
+</body>
+</html>
+
