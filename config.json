@@ -1,6 +1,5 @@
 {
   "port":80,
-
   "mongodatabaseConnection" : "mongodb://localhost:27017/almuhasba",
   "jwtToken":"almuhasba"
 }
